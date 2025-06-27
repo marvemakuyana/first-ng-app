@@ -3,6 +3,11 @@
   [isCompleted]="todo().completed"
   class="todos__item"
 >
-  <input id="todo-{{todo().id}}" type="checkbox" [checked]="todo().completed" />
-  <label for="todo-{{todo().id}}">{{todo().title}}</label>
+  <input
+    id="todo-{{todo().id}}"
+    type="checkbox"
+    [checked]="todo().completed"
+    (change)="this.todoClicked()"
+  />
+  <label for="todo-{{todo().id}}">{{todo().title | uppercase}}</label>
 </li>
